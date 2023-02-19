@@ -2,15 +2,15 @@ export class Outside {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
-        this.gradient = this.ctx.createLinearGradient(
-            0,
-            0,
-            0,
-            this.canvas.height / 2
-        );
-        this.gradient.addColorStop(0, '#2c8ce7');
-        this.gradient.addColorStop(0.5, '#5cb8f7');
-        this.gradient.addColorStop(1, '#b0e5fb');
+        // this.gradient = this.ctx.createLinearGradient(
+        //     0,
+        //     0,
+        //     0,
+        //     this.canvas.height / 2
+        // );
+        // this.gradient.addColorStop(0, '#2c8ce7');
+        // this.gradient.addColorStop(0.5, '#5cb8f7');
+        // this.gradient.addColorStop(1, '#b0e5fb');
 
         this.fieldArray = [];
         for (let i = 0; i < this.canvas.height / 28; i++) {
