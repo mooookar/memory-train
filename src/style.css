@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    font-family: monospace;
+    color: #aaa;
+    position: absolute;
+    cursor: pointer;
+    text-shadow: 0 0 15px white;
+    animation: beat 2s linear infinite;
+    transition: 1s;
+}
+#start:hover {
+    font-size:1.1rem;
+    letter-spacing: 0.5rem;
+    text-shadow: none;
+    animation: none;
+}
+
+@keyframes beat {
+    0% {text-shadow: 0 0 10px white;}
+    10% {text-shadow: 0 0 10px white;}
+    15% {text-shadow: 0 0 30px white;}
+    20% {text-shadow: 0 0 10px white;}
+    30% {text-shadow: 0 0 10px white;}
+    35% {text-shadow: 0 0 30px white;}
+    40% {text-shadow: 0 0 10px white;}
+    100% {text-shadow: 0 0 10px white;}
+    
+}
+
+#canvas {
+    display: block;
+    margin: 0 auto;
+}
