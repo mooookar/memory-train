@@ -20,25 +20,59 @@ body {
     transition: 1s;
 }
 #start:hover {
-    font-size:1.1rem;
+    font-size: 1.1rem;
     letter-spacing: 0.5rem;
     text-shadow: none;
     animation: none;
 }
 
 @keyframes beat {
-    0% {text-shadow: 0 0 10px white;}
-    10% {text-shadow: 0 0 10px white;}
-    15% {text-shadow: 0 0 30px white;}
-    20% {text-shadow: 0 0 10px white;}
-    30% {text-shadow: 0 0 10px white;}
-    35% {text-shadow: 0 0 30px white;}
-    40% {text-shadow: 0 0 10px white;}
-    100% {text-shadow: 0 0 10px white;}
-    
+    0% {
+        text-shadow: 0 0 10px white;
+    }
+    10% {
+        text-shadow: 0 0 10px white;
+    }
+    15% {
+        text-shadow: 0 0 30px white;
+    }
+    20% {
+        text-shadow: 0 0 10px white;
+    }
+    30% {
+        text-shadow: 0 0 10px white;
+    }
+    35% {
+        text-shadow: 0 0 30px white;
+    }
+    40% {
+        text-shadow: 0 0 10px white;
+    }
+    100% {
+        text-shadow: 0 0 10px white;
+    }
 }
 
 #canvas {
     display: block;
     margin: 0 auto;
+}
+
+#info {
+    font-family: monospace;
+    position: absolute;
+    color: #fff;
+    top: 1rem;
+    left: 1rem;
+    width: calc(100vw - 2rem);
+}
+
+#name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#description {
+    height: 50vh;
+    overflow: scroll;
 }

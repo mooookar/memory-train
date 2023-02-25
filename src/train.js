@@ -8,7 +8,7 @@ export class Train {
 
         this.props = new Array(~~(this.canvas.width / 100))
             .fill(undefined)
-            .map((prop) => new Prop(canvas, { ...this.pos }));
+            .map(() => new Prop(canvas, { ...this.pos }));
     }
 
     draw = () => {

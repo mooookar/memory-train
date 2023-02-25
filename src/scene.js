@@ -23,8 +23,6 @@ export class MainScene {
                   navigator.language ||
                   navigator.browserLanguage ||
                   'en';
-
-        console.log(this.lang);
     }
 
     compute = () => {
@@ -35,16 +33,6 @@ export class MainScene {
 
     render = () => {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-        this.ctx.fillStyle = '#FFF';
-        this.ctx.font = 'normal 16px monospace';
-        this.ctx.fillText(
-            new Intl.DateTimeFormat(this.lang, {
-                dateStyle: 'long',
-            }).format(Date.now()),
-            50,
-            60
-        );
 
         this.outside.draw();
         this.outside.compute();

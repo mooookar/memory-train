@@ -3,7 +3,8 @@ export class Prop {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.pos = { ...position, x: Math.random() * canvas.width - 20 };
-        this.type = Math.round(Math.random() * 5);
+        this.type = Math.ceil(Math.random() * 5);
+        console.log(this.type);
     }
 
     draw = () => {
@@ -65,17 +66,34 @@ export class Prop {
                 this.ctx.closePath();
                 break;
             }
-            // case 4: {
-            //     break;
-            // }
-            // case 5: {
-            //     break;
-            // }
+            case 4: {
+                this.ctx.beginPath();
+                this.ctx.fillStyle = '#aa0000';
+                this.ctx.fillRect(this.pos.x, this.pos.y - 85, 10, -15);
+                this.ctx.fillStyle = '#880000';
+                this.ctx.fillRect(this.pos.x + 7, this.pos.y - 85, 3, -15);
+                this.ctx.fillStyle = '#aaa';
+                this.ctx.fillRect(this.pos.x, this.pos.y - 85, 10, -2);
+                this.ctx.fillRect(this.pos.x, this.pos.y - 100, 10, 2);
+                this.ctx.closePath();
+                break;
+            }
+            case 5: {
+                this.ctx.beginPath();
+                this.ctx.fillStyle = '#006600';
+                this.ctx.fillRect(this.pos.x, this.pos.y - 85, 30, -15);
+                this.ctx.fillStyle = '#004400';
+                this.ctx.fillRect(this.pos.x + 25, this.pos.y - 85, 5, -15);
+                this.ctx.moveTo(this.pos.x, this.pos.y - 95);
+                this.ctx.lineTo(this.pos.x + 11, this.pos.y - 90);
+                this.ctx.lineTo(this.pos.x + 14, this.pos.y - 90);
+                this.ctx.lineTo(this.pos.x + 30, this.pos.y - 95);
+                this.ctx.strokeStyle = '#004400';
+                this.ctx.stroke();
+                this.ctx.closePath();
+                break;
+            }
             default: {
-                // this.ctx.beginPath()
-                // this.ctx.rect(this.pos.x, this.pos.y - 85, 50, -15)
-                // this.ctx.stroke()
-                // this.ctx.closePath()
                 break;
             }
         }
