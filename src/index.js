@@ -33,18 +33,21 @@ function createDesktop() {
     const day = date.getDate();
     const month = date.getMonth() + 1;
 
-    const response = fetch(
+    fetch(
         `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/deaths/${month}/${day}`
     )
         .then((res) => res.json())
         .then((data) => {
             const { deaths } = data;
-            const { year, pages } = deaths[2];
+            const { year, pages } =
+                deaths[Math.round(Math.random() * deaths.length)];
             const { normalizedtitle: name, extract: description } = pages[0];
 
-            dateDiv.innerText = "Died " +  new Intl.DateTimeFormat(navigator.language, {
-                dateStyle: 'long',
-            }).format(new Date(`${year}-${month}-${day}`));
+            dateDiv.innerText =
+                'Died ' +
+                new Intl.DateTimeFormat(navigator.language, {
+                    dateStyle: 'long',
+                }).format(new Date(`${year}-${month}-${day}`));
             nameDiv.innerText = name;
             descriptionDiv.innerText = description;
         });
@@ -66,7 +69,7 @@ function createDesktop() {
             mainScene.render();
             mainScene.compute();
 
-            // document.body.appendChild(info);
+            document.body.appendChild(info);
         }
     });
 }
